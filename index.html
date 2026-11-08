@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Toon Springs - Welcome to the Neighborhood!</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://googleapis.com" rel="stylesheet">
+    <style>
+        :root {
+            --primary-bg: #8cd6ff;
+            --accent-yellow: #ffdf43;
+            --button-orange: #ff7b23;
+            --button-orange-hover: #e5630c;
+            --text-dark: #2c3e50;
+            --card-bg: rgba(255, 255, 255, 0.95);
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Quicksand', sans-serif;
+            background: linear-gradient(180deg, #b3e5fc 0%, #81d4fa 100%);
+            color: var(--text-dark);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            overflow-x: hidden;
+            position: relative;
+        }
+
+        /* Whimsical toony background cloud structures */
+        body::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background-image: 
+                radial-gradient(circle at 15% 25%, rgba(255,255,255,0.4) 0%, rgba(255,255,255,0) 15%),
+                radial-gradient(circle at 85% 15%, rgba(255,255,255,0.4) 0%, rgba(255,255,255,0) 20%);
+            z-index: 1;
+            pointer-events: none;
+        }
+
+        .container {
+            max-width: 750px;
+            width: 90%;
+            margin: 40px auto;
+            text-align: center;
+            z-index: 2;
+        }
+
+        .logo-container {
+            margin-bottom: 25px;
+            filter: drop-shadow(0px 10px 16px rgba(0, 0, 0, 0.2));
+            animation: floatLogo 4s ease-in-out infinite;
+        }
+
+        .logo-container img {
+            max-width: 100%;
+            height: auto;
+            max-height: 250px;
+        }
+
+        @keyframes floatLogo {
+            0% { transform: translateY(0px) rotate(0deg); }
+            50% { transform: translateY(-8px) rotate(0.5deg); }
+            100% { transform: translateY(0px) rotate(0deg); }
+        }
+
+        .main-card {
+            background: var(--card-bg);
+            border: 5px solid #ffffff;
+            border-radius: 35px;
+            padding: 45px 35px;
+            box-shadow: 0 16px 32px rgba(0, 0, 0, 0.12), inset 0 -6px 0 rgba(0,0,0,0.04);
+        }
+
+        h1 {
+            font-family: 'Fredoka', sans-serif;
+            font-size: 2.4rem;
+            color: #1e88e5;
+            margin-bottom: 15px;
+            text-shadow: 2px 2px 0px #ffffff, 4px 4px 0px rgba(13, 71, 161, 0.1);
+        }
+
+        p {
+            font-size: 1.25rem;
+            line-height: 1.6;
+            margin-bottom: 35px;
+            font-weight: 500;
+        }
+
+        /* 3D Toony Button Style */
+        .btn-download {
+            display: inline-block;
+            font-family: 'Fredoka', sans-serif;
+            font-size: 1.6rem;
+            font-weight: 700;
+            color: #ffffff;
+            background-color: var(--button-orange);
+            padding: 18px 50px;
+            border-radius: 50px;
+            border: 4px solid #ffffff;
+            cursor: pointer;
+            text-decoration: none;
+            box-shadow: 0 8px 0 #c65300, 0 12px 20px rgba(0,0,0,0.15);
+            transition: all 0.1s ease;
+            position: relative;
+            outline: none;
+        }
+
+        .btn-download:hover {
+            background-color: var(--button-orange-hover);
+            transform: translateY(2px);
+            box-shadow: 0 6px 0 #c65300, 0 8px 15px rgba(0,0,0,0.15);
+        }
+
+        .btn-download:active {
+            transform: translateY(6px);
+            box-shadow: 0 2px 0 #c65300, 0 4px 8px rgba(0,0,0,0.15);
+        }
+
+        .features {
+            margin-top: 45px;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 20px;
+        }
+
+        .feature-item {
+            background: rgba(255, 255, 255, 0.7);
+            border-radius: 24px;
+            padding: 22px;
+            border: 3px dashed #90caf9;
+        }
+
+        .feature-item h3 {
+            font-family: 'Fredoka', sans-serif;
+            font-size: 1.3rem;
+            color: #0d47a1;
+            margin-bottom: 8px;
+        }
+
+        .feature-item p {
+            font-size: 1.05rem;
+            margin-bottom: 0;
+            line-height: 1.4;
+            color: #455a64;
+        }
+
+        .footer {
+            margin-top: 35px;
+            font-size: 0.95rem;
+            color: #546e7a;
+            font-weight: 600;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <!-- Logo Display Section -->
+        <div class="logo-container">
+            <img src="logo.png" alt="Toon Springs Logo">
+        </div>
+
+        <!-- Main Content Card -->
+        <div class="main-card">
+            <h1>Welcome to Toon Springs!</h1>
+            <p>
+                Get ready for a brand new, private Toontown neighborhood built specifically for family and friends! 
+                Prepare your gags, customize your characters, and get ready to jump back into the action. 
+                The private server launcher is currently being tailored for release.
+            </p>
+
+            <!-- Download Active Placeholder Button -->
+            <button class="btn-download" onclick="alert('The Toon Springs game client launcher is currently being built and optimized. Check back soon for the official setup installer!')">
+                Download Coming Soon
+            </button>
+
+            <!-- Server Highlights Layout -->
+            <div class="features">
+                <div class="feature-item">
+                    <h3>🎨 Cozy Neighborhood</h3>
+                    <p>A safe, personal workspace and playground completely dedicated to our core group.</p>
+                </div>
+                <div class="feature-item">
+                    <h3>💦 Crystal Clear Performance</h3>
+                    <p>Smooth gameplay running directly on custom remote server resources.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Footer Segment -->
+        <div class="footer">
+            <p>Toon Springs is an entirely free, non-commercial fan project. Built with 💙 for friends and family.</p>
+        </div>
+    </div>
+
+</body>
+</html>
